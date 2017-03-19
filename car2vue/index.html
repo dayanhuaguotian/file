@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>车友圈</title>
 	<meta name="viewport" content="width=375,user-scalable=no" />
-	<link href="css/index.css" rel="stylesheet"/>
+	<link href="css/index2.css" rel="stylesheet"/>
 	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 	<script src="js/vue.js"></script>	
 	<script src="js/index.js"></script>	
@@ -59,7 +59,9 @@
 						</ul>		
 					</div>
 					<!-- 是作者才有删除 -->
-					<span @click="love(index)">{{item.love}}</span><span>评论</span><span v-if="list[0].user==item.name">删除</span><br/>
+					<span @click="love(index)">{{item.love}}</span>
+					<span @click="addtodo">评论</span>
+					<span @click="todo(index)" v-if="list[0].user==item.name">删除</span><br/>
 					<strong class="time">{{item.time}}</strong>
 				</div>
 				<div class="comment">
@@ -72,8 +74,9 @@
 						</li>
 					</ul>
 				</div>
-				<p @click="show(index)">查看全部 {{item.comment.length}} 条评论<img src="img/comment-downarrow.svg" alt="" v-if="item.off"><img src="img/comment-uparrow.svg" alt="" v-if="!item.off">
+				<p @click="show(index)" v-if="item.off">查看全部 {{item.comment.length}} 条评论<img src="img/comment-downarrow.svg" alt=""  >
 				</p>
+				<p  @click="show(index)" v-if="!item.off">收起 <img src="img/comment-uparrow.svg" alt=""></p>
 			</main>
 		</section>
 	</main>	

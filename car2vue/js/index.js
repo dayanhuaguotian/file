@@ -58,8 +58,7 @@ var list=[{'user':'张小六','backpic':'img/friendcircle-banner.png','headpic':
 	 	},]
 		
 	];
-
-	var message = new Vue({
+var message = new Vue({
 	  el: '#app',
 	  data: {
 	  	message:'hello',
@@ -95,6 +94,12 @@ var list=[{'user':'张小六','backpic':'img/friendcircle-banner.png','headpic':
 	  			this.list[1][index].love=parseInt(this.list[1][index].love)-1;
 	  			this.loveoff[index].off=true;
 	  		}
+	  	},
+	  	todo(index){ 		
+	  		this.list[1].splice(index,1)
+	  	},
+	  	addtodo(index){
+	  		console.log(1)
 	  	}
 	  }
 	});
